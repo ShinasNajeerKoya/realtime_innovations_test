@@ -2,6 +2,7 @@ import 'package:rxdart/rxdart.dart';
 
 class SplashBloC {
   final showPage = PublishSubject<String>();
+
   SplashBloC() {
     initDetails();
   }

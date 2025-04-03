@@ -2,7 +2,7 @@
 
 // ignore_for_file: constant_identifier_names
 
-abstract class  LocaleKeys {
+abstract class LocaleKeys {
   static const blank = 'blank';
   static const save = 'save';
   static const cancel = 'cancel';
@@ -28,5 +28,4 @@ abstract class  LocaleKeys {
   static const qaTester = 'qaTester';
   static const productOwner = 'productOwner';
   static const errorSelectValidDates = 'errorSelectValidDates';
-
 }

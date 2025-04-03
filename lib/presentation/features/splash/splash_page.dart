@@ -24,7 +24,8 @@ class _SplashPageState extends State<SplashPage> {
     if (bloc == null) {
       bloc = Provider.of<SplashBloC>(context);
 
-      _subscription ??= bloc!.showPage.debounceTime(const Duration(milliseconds: 500)).listen(handlePageNavigation);
+      _subscription ??=
+          bloc!.showPage.debounceTime(const Duration(milliseconds: 500)).listen(handlePageNavigation);
     }
   }
 
@@ -39,6 +40,7 @@ class _SplashPageState extends State<SplashPage> {
     return Scaffold(
       body: Center(
         child: Text(
+          key: const ValueKey('welcome_text_key'),
           'Welcome',
           style: TextStyles.h1,
         ),

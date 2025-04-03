@@ -53,7 +53,7 @@ class EmployeeFormBloC {
   }
 
   Future<bool> manageEmployeeUpdate() async {
-    if (await _validateForm()) {
+    if (await validateForm()) {
       final _config = ManageEmployeeConfig(
         name: nameStream.value,
         role: selectedRole.value!,
@@ -70,7 +70,7 @@ class EmployeeFormBloC {
     return false;
   }
 
-  Future<bool> _validateForm() async {
+  Future<bool> validateForm() async {
     bool _status = true;
 
     if (nameStream.value.isEmpty) {

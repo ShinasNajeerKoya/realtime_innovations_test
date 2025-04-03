@@ -157,7 +157,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                               prefixIcon: widget.prefixIcon,
                               alignLabelWithHint: widget.alignLabelWithHint,
                               hintText: widget.hintTextKey.toLocalizeString,
-                              hintStyle:  TextStyles.h5Silver,
+                              hintStyle: TextStyles.h5Silver,
                               contentPadding: EdgeInsets.symmetric(horizontal: 5.w),
                               fillColor: widget.filledColor,
                               filled: widget.filled,
@@ -223,7 +223,7 @@ class _ErrorTextWidget extends StatelessWidget {
                 ((isEmptyError && _textData.isEmpty) || !isEmptyError)) {
               return LocalizedText(
                 _error,
-                textStyle:  TextStyles.h6.copyWith(color: AppColors.kRed),
+                textStyle: TextStyles.h6.copyWith(color: AppColors.kRed),
               );
             } else {
               return Container();

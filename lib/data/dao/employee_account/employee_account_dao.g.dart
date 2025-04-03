@@ -47,7 +47,5 @@ class EmployeeAccountDaoAdapter extends TypeAdapter<EmployeeAccountDao> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is EmployeeAccountDaoAdapter &&
-          runtimeType == other.runtimeType &&
-          typeId == other.typeId;
+      other is EmployeeAccountDaoAdapter && runtimeType == other.runtimeType && typeId == other.typeId;
 }

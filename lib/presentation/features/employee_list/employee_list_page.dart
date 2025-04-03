@@ -34,6 +34,7 @@ class _EmployeeListPageState extends State<EmployeeListPage> {
     return Scaffold(
       backgroundColor: AppColors.kGrey,
       appBar: AppBar(
+        key: const ValueKey('employee_list_header_key'),
         backgroundColor: AppColors.kPrimary,
         title: LocalizedText(
           LocaleKeys.employeeList,
@@ -76,6 +77,7 @@ class _EmployeeListPageState extends State<EmployeeListPage> {
         },
       ),
       floatingActionButton: FloatingActionButton(
+        key: const ValueKey('floating_action_button'),
         backgroundColor: AppColors.kPrimary,
         onPressed: () {
           Navigator.pushNamed(

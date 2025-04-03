@@ -9,6 +9,6 @@ extension DateExtension on DateTime {
   }
 
   String get dateFormatWithComma {
-    return  DateFormat('dd MMM, yyyy').format(this);
+    return DateFormat('dd MMM, yyyy').format(this);
   }
 }
