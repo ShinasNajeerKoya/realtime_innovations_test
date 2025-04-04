@@ -45,6 +45,8 @@ void main() {
     await tester.pumpWidget(wrapWidgetMaterialApp());
     await tester.pumpAndSettle();
 
+    when(manageEmployeeRepository.deleteSelectedEmployee(empList.first)).thenAnswer((_) async => true);
+
     expect(find.byKey(const ValueKey('employee_list_header_key')), findsOneWidget);
     expect(find.byKey(const ValueKey('floating_action_button')), findsOneWidget);
 
@@ -52,6 +54,12 @@ void main() {
             as FloatingActionButton)
         .onPressed
         ?.call();
+
+    (tester.allWidgets.firstWhere((element) => element.runtimeType == Dismissible) as Dismissible)
+        .onDismissed
+        ?.call(DismissDirection.startToEnd);
+
+    (tester.allWidgets.firstWhere((element) => element.runtimeType == ListTile) as ListTile).onTap?.call();
   });
 }
 

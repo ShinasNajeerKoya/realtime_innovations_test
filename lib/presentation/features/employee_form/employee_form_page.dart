@@ -82,6 +82,7 @@ class _EmployeeFormPageState extends State<EmployeeFormPage> {
                 SizedBox(
                   width: 150,
                   child: CustomTextField(
+                    key: const ValueKey('start_date_picker'),
                     textStream: bloc!.fromDateStream,
                     onTextChanged: bloc!.fromDateStream.add,
                     errorStream: bloc!.fromDateError,
@@ -104,6 +105,7 @@ class _EmployeeFormPageState extends State<EmployeeFormPage> {
                   child: const CustomSvgIcon(AppIcons.kArrowRight),
                 ),
                 CustomTextField(
+                  key: const ValueKey('last_date_picker'),
                   textStream: bloc!.tillDateStream,
                   onTextChanged: bloc!.tillDateStream.add,
                   enabled: false,
@@ -138,15 +140,18 @@ class _EmployeeFormPageState extends State<EmployeeFormPage> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   CustomButton(
+
+                    key: const ValueKey('cancel_button'),
                     buttonTextKey: LocaleKeys.cancel,
                     onTap: () {
-                      Navigator.pop(context, false);
+                      Navigator.pop(context);
                     },
                     filledColor: AppColors.kSecondary,
                     textColor: AppColors.kPrimary,
                   ),
                   horizontalMargin8,
                   CustomButton(
+                    key: const ValueKey('save_button'),
                     buttonTextKey: LocaleKeys.save,
                     onTap: () {
                       bloc!.manageEmployeeUpdate().then((result) {

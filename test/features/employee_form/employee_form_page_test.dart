@@ -48,6 +48,25 @@ void main() {
     expect(find.text(LocaleKeys.addEmployeeDetails), findsOneWidget);
     expect(find.byType(CustomTextField), findsWidgets);
     expect(find.byType(CustomButton), findsWidgets);
+
+    (tester.allWidgets.firstWhere((element) => element.key == const ValueKey('start_date_picker'))
+            as CustomTextField)
+        .onTap
+        ?.call();
+
+    (tester.allWidgets.firstWhere((element) => element.key == const ValueKey('last_date_picker'))
+            as CustomTextField)
+        .onTap
+        ?.call();
+
+    (tester.allWidgets.firstWhere((element) => element.key == const ValueKey('cancel_button'))
+            as CustomButton)
+        .onTap
+        .call();
+
+    (tester.allWidgets.firstWhere((element) => element.key == const ValueKey('save_button')) as CustomButton)
+        .onTap
+        .call();
   });
 
   testWidgets('Displays correct title for Edit mode', (WidgetTester tester) async {
