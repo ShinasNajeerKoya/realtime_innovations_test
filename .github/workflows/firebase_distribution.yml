@@ -3,7 +3,7 @@ name: Build and Distribute Flutter App
 on:
   push:
     branches:
-      - feature/ci-cd_implementation
+      - main
 
 jobs:
   build:
