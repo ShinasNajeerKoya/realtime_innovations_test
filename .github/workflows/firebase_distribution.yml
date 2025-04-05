@@ -22,6 +22,18 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
+      - name: Set up Firebase CLI
+        uses: w9jds/firebase-action@v2.2.0
+        with:
+          args: --version
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
+      - name: Activate flutterfire CLI
+        run: |
+          dart pub global activate flutterfire_cli
+          echo "$HOME/.pub-cache/bin" >> $GITHUB_PATH
+
       - name: Decode keystore
         run: |
           echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > android/app/android_app-key.jks
