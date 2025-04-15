@@ -9,7 +9,7 @@ import 'package:rxdart/rxdart.dart';
 class EmployeeFormBloC {
   final EmployeeAccountDao? employeeAccountDao;
   final ManageEmployeeRepository manageEmployeeRepository;
-
+ 
   final nameStream = BehaviorSubject<String>.seeded('');
   final nameErrorStream = BehaviorSubject<String>();
 
